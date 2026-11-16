@@ -1,0 +1,26 @@
+#include "EchoServer.hpp"
+#include <memory>
+
+static void Usage(const std::string process)
+{
+    std::cerr << "Usage:\n\t";
+    std::cerr << process << "local port" << std::endl;
+}
+
+
+int main(int argc, char *argv[])
+{
+    if(argc != 2)
+    {
+        Usage(argv[0]);
+        exit(USAGE_ERR);
+    }
+
+    uint16_t server_port = std::stoi(argv[1]);
+
+    std::unique_ptr<TcpServer> tsvr = std::make_unique<TcpServer>(server_port);
+
+    tsvr->Init();
+    tsvr->Loop();
+    return 0;
+}

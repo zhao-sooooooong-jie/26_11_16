@@ -24,6 +24,7 @@ enum
     SOCKET_ERR,
     USAGE_ERR,
     BIND_ERR,
+    USAGE_ERR,
 };
 
 class UdpServer{
