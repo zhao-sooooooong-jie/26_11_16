@@ -6,4 +6,4 @@ client_tcp:EchoClient.cc
 	g++ -o $@ $^ -std=c++17
 .PHONY:clean
 clean:
-	rm -f client.tcp server.tcp
+	rm -f client_tcp server_tcp
